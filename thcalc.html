@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            link, a, div, menu {
+text-align: center;
+position: relative;
+float:center;
+                      color: white;
+}
+            html, body {
+				background-color: black;
+				color: white;
+                height: 100%;
+            }
+            body {
+				text-align: center;
+				position: relative;
+				float:center;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                display: table;
+                font-weight: 100;
+                font-family: 'system-ui';
+            }
+            .container {
+				text-align: center;
+				float:center;
+                position: relative;
+                display: table-cell;
+            }
+            .content {
+				text-align: center;
+                display: inline-block;
+			}
+			.TG{ color:lightgreen;
+				 }
+			.TY{ color:red;
+			}
+        </style>
+    </head>
+<body><script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+<div class="container" style="display:inline-block;width:600px;">
+<div class="content" style="float:center;position: relative;">
+<br /><form action="" method="post">
+<label>Enter THC%:</label><input type="text" id="thcperc" name="thcperc" value=''/><br><br>
+<input name="form" type="button" value="Submit" onclick="Calculate();"/><br><br>
+</form>
+<script>
+async function Calculate() {
+var THCPerc = document.getElementById('thcperc').value;
+var THCGram = THCPerc / 0.1;
+var THCHalfG = THCGram / 2;
+var THC8th = THCGram * 3.5;
+var THCQuarter = THCGram * 7;
+var THCHalfZ = THCGram * 14;
+var THCOunce = THCGram * 28;
+var THCQuartG = THCGram / 4;
+var THCTwoTenths = THCGram / 5;
+var THCTenth = THCGram / 10;
+var THCHalfTen = THCGram / 20;
+$("#log").html(String(THCPerc) + "% THC<br>One Gram (1g) = " + 
+"<span class='TY'>" + String(THCGram) + " mg</span><span class='TG'> of THC Available</span> in about 1,000 miligrams" +
+"<br>Half Gram (0.5g) = <span class='TY'>" + String(THCHalfG) + " mg</span> <span class='TG'>of THC Available</span> in about 500 mg" +
+"<br>An 8th (3.5g) = <span class='TY'>" + String(THC8th) + " mg</span><span class='TG'> of THC Available</span> in about 3,500 mg" +
+"<br>A Quarter Oz (7g) = <span class='TY'>" + String(THCQuarter) + " mg</span><span class='TG'> of THC Available</span> in about 7,000 mg" +
+"<br>A Half Oz (14g) = <span class='TY'>" + String(THCHalfZ) + " mg</span><span class='TG'> of THC Available</span> in about 14,000 mg" +
+"<br>One Ounce (28g) = <span class='TY'>" + String(THCOunce) + " mg</span><span class='TG'> of THC Available</span> in about 28,000 mg" + 
+"<br>Quarter Gram (0.25g) = <span class='TY'>" + String(THCQuartG) + " mg</span><span class='TG'> of THC Available</span> in about 250 mg" + 
+"<br>Two Tenths (0.20g) = <span class='TY'>" + String(THCTwoTenths) + " mg</span><span class='TG'> of THC Available</span> in about 200 mg" + 
+"<br>One Tenth (0.10g) = <span class='TY'>" + String(THCTenth) + " mg</span><span class='TG'> of THC Available</span> in about 100 mg" + 
+"<br>Half Tenth (0.05g) = <span class='TY'>" + String(THCHalfTen) + " mg</span><span class='TG'> of THC Available</span>in about 50 mg");
+};
+</script>
+<div id="log"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
