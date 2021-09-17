@@ -50,17 +50,19 @@ float:center;
 </form>
 <script>
 async function Calculate() {
-var THCPerc = document.getElementById('thcperc').value;
-var THCGram = THCPerc / 0.1;
-var THCHalfG = THCGram / 2;
-var THC8th = THCGram * 3.5;
-var THCQuarter = THCGram * 7;
-var THCHalfZ = THCGram * 14;
-var THCOunce = THCGram * 28;
-var THCQuartG = THCGram / 4;
-var THCTwoTenths = THCGram / 5;
-var THCTenth = THCGram / 10;
-var THCHalfTen = THCGram / 20;
+var THCPerc = parseFloat(document.getElementById('thcperc').value);
+var THCPerc877 = Math.round(THCPerc * 0.877);
+//var THCGram = THCPerc / 0.1;
+var THCGram = parseFloat(THCPerc877 / 0.1); // / 0.1;
+var THCHalfG = parseFloat(THCGram / 2);
+var THC8th = parseFloat(THCGram * 3.5);
+var THCQuarter = parseFloat(THCGram * 7);
+var THCHalfZ = parseFloat(THCGram * 14);
+var THCOunce = parseFloat(THCGram * 28);
+var THCQuartG = parseFloat(THCGram / 4);
+var THCTwoTenths = parseFloat(THCGram / 5);
+var THCTenth = parseFloat(THCGram / 10);
+var THCHalfTen = parseFloat(THCGram / 20);
 $("#log").html(String(THCPerc) + "% THC<br>One Gram (1g) = " + 
 "<span class='TY'>" + String(THCGram) + " mg</span><span class='TG'> of THC Available</span> in about 1,000 miligrams" +
 "<br>Half Gram (0.5g) = <span class='TY'>" + String(THCHalfG) + " mg</span> <span class='TG'>of THC Available</span> in about 500 mg" +
